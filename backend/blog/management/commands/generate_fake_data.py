@@ -56,7 +56,7 @@ class Command(BaseCommand):
             Comment.objects.create(
                 post=post,
                 author=user,
-                content=self.generate_crazy_comment()
+                content=self.generate_normal_comment()
             )
 
     def generate_normal_comment(self):

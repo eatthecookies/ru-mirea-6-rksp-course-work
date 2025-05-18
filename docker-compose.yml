@@ -27,17 +27,17 @@ services:
       - DATABASE_URL=postgres://myuser:mypassword@db:5432/mydb
     depends_on:
       - db
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #   container_name: nextjs
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - NEXT_PUBLIC_API_URL=http://localhost:8000
-  #     - AUTH_SECRET=ecb7ac6104dd962711645d7b9267dd25
-  #     - NEXTAUTH_SECRET=secret
-  #     - NEXTAUTH_URL=http://localhost:3000
+  frontend:
+    build:
+      context: ./frontend
+    container_name: nextjs
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - AUTH_SECRET=ecb7ac6104dd962711645d7b9267dd25
+      - NEXTAUTH_SECRET=secret
+      - NEXTAUTH_URL=http://localhost:3000
 
 volumes:
   postgres_data:
